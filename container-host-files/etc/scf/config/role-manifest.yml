@@ -1535,7 +1535,9 @@ configuration:
   - name: CC_DB_ENCRYPTION_KEYS
     description: A map of labels and encryption keys
     secret: true
-    # This is a quoted tilde so it results in a tilde in the CC yaml file
+    # This is a quoted tilde so it results in a tilde in the CC yaml file, not a nil value in this file.
+    # A real example would be something like: "{key0: Chieh1quaela3iaN}", and the CC_DB_CURRENT_KEY_LABEL 
+    # would be set to "key0".
     default: "~"
   - name: CC_SERVER_CRT
     secret: true
